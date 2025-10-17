@@ -1,12 +1,26 @@
 window.addEventListener('load', () => {
-    const messages = [
-        "Chúc mẹ luôn khỏe mạnh và hạnh phúc 🌸",
-        "Cảm ơn mẹ vì những hi sinh thầm lặng và tình yêu bao la không điều kiện 💖",
-        "Chúc mẹ luôn giữ nụ cười hiền và ánh mắt dịu dàng, như ngọn đèn sưởi ấm gia đình 💕",
-        "Con yêu mẹ rất nhiều — mong mỗi ngày của mẹ đều tràn ngập niềm vui và bình an 🌷",
-        "Mong sao mẹ luôn bình an, hạnh phúc và khoẻ mạnh 🌼",
-        "20/10 là ngày đặc biệt, nhưng với con, mỗi ngày đều là ngày của mẹ 💫"
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const customMessage = urlParams.get('message');
+    // const messages = [
+    //     "Chúc mẹ luôn khỏe mạnh và hạnh phúc 🌸",
+    //     "Cảm ơn mẹ vì những hi sinh thầm lặng và tình yêu bao la không điều kiện 💖",
+    //     "Chúc mẹ luôn giữ nụ cười hiền và ánh mắt dịu dàng, như ngọn đèn sưởi ấm gia đình 💕",
+    //     "Con yêu mẹ rất nhiều — mong mỗi ngày của mẹ đều tràn ngập niềm vui và bình an 🌷",
+    //     "Mong sao mẹ luôn bình an, hạnh phúc và khoẻ mạnh 🌼",
+    //     "20/10 là ngày đặc biệt, nhưng với con, mỗi ngày đều là ngày của mẹ 💫"
+    // ];
+
+    let messages = [
+        "Chúc người phụ nữ xinh đẹp nhất đời con 20/10 thật vui vẻ và hạnh phúc 💕",
+        "Mong mẹ Hạnh mỗi ngày trôi qua đều được bình an và thật nhiều sức khoẻ.",
+        "Con tin là mọi chuyện trên đời đều đã được an bài, nên mẹ đừng nghĩ ngợi quá nhiều mà hãy tận hưởng cuộc sống hơn, thư giãn nhiều hơn và cười thật nhiều nhé.",
+        "Yêu mẹ nhèoooo lémmmm ❤️❤️❤️"
     ];
+
+    if (customMessage) {
+        messages = [decodeURIComponent(customMessage)];
+    }
 
     const msgEl = document.getElementById('message');
     let i = 0;
